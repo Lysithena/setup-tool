@@ -82,3 +82,10 @@ let g:ale_completion_max_suggestions = 1
 let g:ale_open_list = 1
 
 let g:deoplete#enable_at_startup = 1
+" SuperTab like snippets behavior.
+ imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+ \ "\<Plug>(neosnippet_expand_or_jump)"
+ \: pumvisible() ? "\<C-n>" : "\<TAB>"
+ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)"
+   \: "\<TAB>"

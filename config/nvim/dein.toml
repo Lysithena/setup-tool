@@ -31,3 +31,9 @@ repo =  'fatih/vim-go'
 
 [[plugins]]
 repo =  'w0rp/ale'
+
+[[plugins]]
+repo =  'Shougo/neosnippet.vim'
+
+[[plugins]]
+repo =  'Shougo/neosnippet-snippets'

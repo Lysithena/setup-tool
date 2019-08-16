@@ -1,2 +1,2 @@
-cp -R ~/.config/nvim ./config/
-cp -R ~/.config/awesome ./config
+cp -rf ~/.config/nvim ./config/
+cp -rf ~/.config/awesome ./config
