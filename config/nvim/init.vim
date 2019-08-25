@@ -40,7 +40,6 @@ set autoindent
 set ignorecase
 set smartcase
 set hlsearch
-set mouse=a
 colorscheme molokai
 tnoremap <ESC> <C-\><C-n>
 nnoremap <silent> <C-j> :bprev<CR>
