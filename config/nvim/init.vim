@@ -37,6 +37,10 @@ set number
 set expandtab
 set tabstop=4
 set autoindent
+set shiftwidth=4
+set smartindent
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+set hidden
 set ignorecase
 set smartcase
 set hlsearch

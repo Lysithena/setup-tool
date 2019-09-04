@@ -1,3 +1,4 @@
+#!/bin/bash
 gitpath="https://github.com/Lysithena/setup-tool"
 gitdir="./setup-tool"
 mkdir ~/.config/awesome
@@ -7,3 +8,5 @@ cp -rf ${gitdir}/config/* ~/.config/
 pip3 install --user pynvim #requirements of deoplete
 
 rm -rf ${gitdir}
+mkdir ~/Trash
+chsh -s $(which fish)

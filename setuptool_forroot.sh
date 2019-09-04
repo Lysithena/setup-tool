@@ -1,4 +1,4 @@
-softwares="firefox vlc neovim python3-pip awesome git ibus-mozc"
+softwares="firefox vlc neovim python3-pip awesome git ibus-mozc terminator fish"
 
 apt update
 apt upgrade
