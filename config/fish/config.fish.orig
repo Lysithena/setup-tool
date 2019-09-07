@@ -1,6 +1,7 @@
 #eval (hub alias -s)
 alias b popd
 <<<<<<< HEAD
+alias vi nvim
 =======
 alias ..='cd ..'
 alias ...='cd ../..'
