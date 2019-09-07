@@ -1,5 +1,5 @@
 #!/bin/bash
-configs=("i3" "rofi" "nvim" "fish" "fisher")
+configs=("i3" "rofi" "polybar" "nvim" "fish" "fisher")
 dir=`dirname $0`
 
 echo "starting"

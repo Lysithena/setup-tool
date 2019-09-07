@@ -148,4 +148,4 @@
     margin:     0 0.3em 0 0;
     text-color: @normal-foreground;
 }
-rofi.theme: /usr/share/rofi/themes/Monokai.rasi
+rofi.theme: /usr/share/rofi/themes/Arc-Dark.rasi

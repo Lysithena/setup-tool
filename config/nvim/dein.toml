@@ -40,3 +40,6 @@ repo =  'Shougo/neosnippet-snippets'
 
 [[plugins]]
 repo =  'tpope/vim-surround'
+
+[[plugins]]
+repo =  'tyru/open-browser.vim'
