@@ -26,6 +26,9 @@ foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
+cyan = #00BCD4
+darkcyan = #4DB6AC
+yellow = #C9BC0E
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -51,13 +54,13 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Cica:pixelsize=10;1
-font-1 = Cica:fontformat=truetype:size=8:antialias=false;0
+font-0 = Cica:pixelsize=12;1
+font-1 = Cica:pixelsize=12;0
 font-2 = Cica:pixelsize=10;1
 
 modules-left = bspwm i3
 modules-center = 
-modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu cpu-graph wlan eth battery temperature date
 
 tray-position = right
 tray-padding = 2
@@ -205,15 +208,41 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = "💻 "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage:2%%
 
+
+[module/cpu-graph]
+type = internal/cpu
+interval = 0.08
+format = "<ramp-coreload>"
+format-underline = ${colors.cyan}
+format-margin = 1
+format-padding = 1
+ramp-coreload-0 = ▁
+ramp-coreload-0-foreground = ${colors.darkcyan}
+ramp-coreload-1 = ▂
+ramp-coreload-1-foreground = ${colors.darkcyan}
+ramp-coreload-2 = ▃
+ramp-coreload-2-foreground = ${colors.cyan}
+ramp-coreload-3 = ▄
+ramp-coreload-3-foreground = ${colors.cyan}
+ramp-coreload-4 = ▅
+ramp-coreload-4-foreground = ${colors.yellow}
+ramp-coreload-5 = ▆
+ramp-coreload-5-foreground = ${colors.yellow}
+ramp-coreload-6 = ▇
+ramp-coreload-6-foreground = ${colors.alert}
+ramp-coreload-7 = █
+ramp-coreload-7-foreground = ${colors.alert}
+
+
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label = %percentage_used%%
@@ -243,14 +272,20 @@ ramp-signal-foreground = ${colors.foreground-alt}
 [module/eth]
 type = internal/network
 interface = eno1
-interval = 3.0
+interval = 1
+format-connected = <label-connected>
+;format-connected-background = ${colors.shade2}
+format-connected-underline = ${colors.primary}
+format-connected-padding = 1
+label-connected =  %upspeed:9%  %downspeed:9%
+;label-connected =  %upspeed:9%  %downspeed:9%
+format-disconnected = <label-disconnected>
+format-disconnected-padding = 1
+format-disconnected-underline = ${colors.primary}
+label-disconnected = 睊
+;format-connected-margin = ${margin.for-modules}
+;format-disconnected-margin = ${margin.for-modules}
 
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
-
-format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
@@ -258,7 +293,7 @@ format-disconnected =
 
 [module/date]
 type = internal/date
-interval = 5
+interval = 1
 
 date =
 date-alt = " %Y-%m-%d"
@@ -266,7 +301,7 @@ date-alt = " %Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
+format-prefix = 📅
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
@@ -386,7 +421,7 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = 
+label-open = 🔋
 label-open-foreground = ${colors.secondary}
 label-close =  cancel
 label-close-foreground = ${colors.secondary}

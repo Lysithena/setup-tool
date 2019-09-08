@@ -148,4 +148,10 @@
     margin:     0 0.3em 0 0;
     text-color: @normal-foreground;
 }
-rofi.theme: /usr/share/rofi/themes/Arc-Dark.rasi
+rofi.modi: system:~/.config/rofi/system.sh
+rofi.sidebar-mode: true
+rofi.hide-scrollbar: true
+rofi.kb-mode-next: Alt+l
+rofi.kb-mode-previous: Alt+h
+rofi.kb-cancel: Escape
+rofi.theme: /usr/share/rofi/themes/glue_pro_blue.rasi
