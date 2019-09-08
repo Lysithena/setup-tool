@@ -1,12 +1,19 @@
 #!/bin/bash
 gitpath="https://github.com/Lysithena/setup-tool"
-gitdir="./setup-tool"
-mkdir ~/.config/awesome
-mkdir ~/.config/nvim
-git clone ${gitpath} ${gitdir}
-cp -rf ${gitdir}/config/* ~/.config/
+gitdir=$(dirname $0)
+#git clone ${gitpath} ${gitdir}
+
+rm -rf ~/.config/backup
+mkdir ~/.config/backup
+for dir in $(ls $gitdir/config);
+do
+    echo "copying $dir"
+    mv ~/.config/$dir ~/.config/backup/
+    cp -rf $gitdir/config/$dir ~/.config/
+    diff ~/.config/$dir ~/.config/backup/$dir
+done
+
 pip3 install --user pynvim #requirements of deoplete
 
-rm -rf ${gitdir}
 mkdir ~/Trash
 chsh -s $(which fish)
