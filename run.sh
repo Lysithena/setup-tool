@@ -1,5 +1,10 @@
-echo "Do you need desktop environment?(Y/n)"
-read ans
+ans=y
+if [ $# != 1 ]; then
+    echo "Do you need desktop environment?(Y/n)"
+    read ans
+elif [ $1 = "false" ];then
+    ans=n
+fi
 dir=$(dirname $0)
 isguineeded=true
 if [ $ans = "n" ]; then

@@ -44,6 +44,7 @@ set hidden
 set ignorecase
 set smartcase
 set hlsearch
+set display=uhex
 colorscheme molokai
 tnoremap <ESC> <C-\><C-n>
 nnoremap <silent> <C-j> :bprev<CR>
