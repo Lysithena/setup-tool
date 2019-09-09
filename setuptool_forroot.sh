@@ -1,20 +1,26 @@
 #!/bin/bash
-softwares="feh \ #Image Viewer
-    maim \ #Screenshot tool
-    atool \ #Useful archiver
-    golang gvfs-backends neovim python3-pip i3 curl rofi compton git ibus-mozc terminator fish ibus-mozc"
+guisoftwares="maim gvfs-backends rofi compton ibus-mozc terminator ibus-mozc"
+softwares="feh atool golang neovim python3-pip i3 curl git fish"
 
 apt update
 apt upgrade
+
 apt -y install ${softwares}
 
-#install polybar
-if [ ! -e /usr/local/bin/polybar]; then
-    apt install -y cmake cmake-data libcairo2-dev libxcb1-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-randr0-dev libxcb-util0-dev libxcb-xkb-dev pkg-config python-xcbgen xcb-proto libxcb-xrm-dev i3-wm libasound2-dev libmpdclient-dev libiw-dev libcurl4-openssl-dev libpulse-dev libxcb-composite0-dev
-git clone https://github.com/jaagr/polybar.git
-    cd polybar && bash ./build.sh
-    cd ../
-    rm -rf polybar
+if [ $# != 1 ]; then
+    echo "arguments error"
+fi
+
+if "$1"; then
+    apt install ${guisoftwares}
+    #install polybar
+    if [ ! -e /usr/local/bin/polybar]; then
+        apt install -y cmake cmake-data libcairo2-dev libxcb1-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-randr0-dev libxcb-util0-dev libxcb-xkb-dev pkg-config python-xcbgen xcb-proto libxcb-xrm-dev i3-wm libasound2-dev libmpdclient-dev libiw-dev libcurl4-openssl-dev libpulse-dev libxcb-composite0-dev
+        git clone https://github.com/jaagr/polybar.git
+        cd polybar && bash ./build.sh
+        cd ../
+        rm -rf polybar
+    fi
 fi
 
 #install cica font
