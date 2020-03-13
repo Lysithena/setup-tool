@@ -30,9 +30,6 @@ repo = 'Shougo/vimfiler'
 repo =  'fatih/vim-go'
 
 [[plugins]]
-repo =  'w0rp/ale'
-
-[[plugins]]
 repo =  'Shougo/neosnippet.vim'
 
 [[plugins]]
@@ -43,3 +40,23 @@ repo =  'tpope/vim-surround'
 
 [[plugins]]
 repo =  'tyru/open-browser.vim'
+
+[[plugins]]
+repo =  'dhruvasagar/vim-table-mode'
+
+[[plugins]]
+repo =  'neoclide/coc.nvim'
+build = './install.sh nightly'
+[[plugins]]
+repo =  'prabirshrestha/async.vim'
+[[plugins]]
+repo =  'prabirshrestha/vim-lsp'
+[[plugins]]
+repo =  'prabirshrestha/asyncomplete.vim'
+[[plugins]]
+repo =  'prabirshrestha/asyncomplete-lsp.vim'
+[[plugins]]
+repo =  'natebosch/vim-lsc'
+
+[[plugins]]
+repo =  'mbbill/undotree'

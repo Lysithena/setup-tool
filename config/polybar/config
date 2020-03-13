@@ -31,7 +31,7 @@ darkcyan = #4DB6AC
 yellow = #C9BC0E
 
 [bar/example]
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:}
 width = 100%
 height = 27
 ;offset-x = 1%
