@@ -5,7 +5,14 @@ gitdir=$(dirname $0)
 
 rm -rf ~/.config/backup
 mkdir ~/.config/backup
-for dir in $(ls $gitdir/config);
+dirstocopy=$(ls $gitdir/config)
+
+if [ $# = 1 ];
+then
+    dirstocopy=$1
+fi
+
+for dir in $dirstocopy;
 do
     echo "copying $dir"
     mv ~/.config/$dir ~/.config/backup/
@@ -15,5 +22,4 @@ done
 
 pip3 install --user pynvim #requirements of deoplete
 
-mkdir ~/Trash
 chsh -s $(which fish)

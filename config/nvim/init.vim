@@ -65,6 +65,8 @@ set clipboard+=unnamedplus
 set mouse=a
 
 hi MatchParen      ctermfg=208 ctermbg=233 cterm=bold 
+set display=uhex
+colorscheme molokai
 tnoremap <ESC> <C-\><C-n>
 nnoremap <silent> <C-j> :bprev<CR>
 nnoremap <silent> <C-k> :bnext<CR>
@@ -86,7 +88,6 @@ let g:airline#extensions#ale#warning_symbol = ' '
 let g:airline#extensions#default#section_truncate_width = {}
 let g:airline#extensions#whitespace#enabled = 1
 let g:airline#extensions#ale#enabled = 0
-"
 let g:go_def_mapping_enabled = 0
 let g:go_fmt_autosave = 1
 let g:go_highlight_types = 1

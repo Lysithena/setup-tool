@@ -1,6 +1,6 @@
 #!/bin/bash
-guisoftwares="maim gvfs-backends rofi compton ibus-mozc terminator ibus-mozc"
-softwares="feh atool golang neovim python3-pip i3 curl git fish"
+guisoftwares="maim gvfs-backends rofi compton i3 ibus-mozc terminator ibus-mozc"
+softwares="feh atool golang neovim python3-pip curl git fish"
 
 apt update
 apt upgrade
