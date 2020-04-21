@@ -1,6 +1,7 @@
 {
   "suggest.noselect":false,
   "suggest.preferCompleteThanJumpPlaceholder":true,
+  "signature.target": "echo",
   "languageserver": {
     "golang": {
       "command": "gopls",
