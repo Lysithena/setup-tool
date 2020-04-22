@@ -8,7 +8,6 @@ if dein#load_state('~/.cache/dein')
   call dein#begin('~/.cache/dein')
 
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
-  call dein#add('Shougo/deoplete.nvim')
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')
     call dein#add('roxma/vim-hug-neovim-rpc')
@@ -91,7 +90,6 @@ nmap <silent> <Leader>r :LspReferences<CR>
 nmap <silent> <Leader>i :LspImplementation<CR>
 let g:lsp_diagnostics_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
-let g:asyncomplete_popup_delay = 10000000000
 let g:lsp_text_edit_enabled = 0
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :

@@ -2,9 +2,6 @@
 repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-
-[[plugins]]
 repo	=	'vim-airline/vim-airline-themes'
 
 [[plugins]]
@@ -39,16 +36,11 @@ repo =  'neoclide/coc.nvim'
 build = './install.sh nightly'
 on_i = 1
 merged = '0'
-hook_source = 'call coil398#init#coc#hook_source()'
 
 [[plugins]]
 repo =  'mbbill/undotree'
 [[plugins]]
 repo = 'prabirshrestha/async.vim'
-[[plugins]]
-repo = 'prabirshrestha/asyncomplete.vim'
-[[plugins]]
-repo = 'prabirshrestha/asyncomplete-lsp.vim'
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
 [[plugins]]
