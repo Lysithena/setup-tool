@@ -18,7 +18,8 @@ bind \cd delete-char
 alias vi=nvim
 alias vim=nvim
 export GOPATH=$HOME/.go/vendor
-export PATH="$PATH:$HOME/.go/go/bin:$GOPATH/bin"
+export JAVA_HOME="/opt/java/jdk-11.0.2"
+export PATH="$PATH:$HOME/.go/go/bin:$GOPATH/bin:$HOME/gowin/IDE/bin/:/usr/bin:$JAVA_HOME/bin"
 export GO111MODULE=on
 
 function fish_user_key_bindings

@@ -24,7 +24,6 @@ endif
 
 filetype plugin indent on
 syntax enable
-call map(dein#check_clean(), "delete(v:val, 'rf')")
 
 set undodir=$HOME/.config/undodir/
 set undofile
@@ -57,9 +56,9 @@ set clipboard+=unnamedplus
 set mouse=a
 set autoindent
 
-hi MatchParen      ctermfg=208 ctermbg=233 cterm=bold 
 set display=uhex
 colorscheme molokai
+hi MatchParen      ctermfg=208 ctermbg=233 cterm=bold 
 tnoremap <ESC> <C-\><C-n>
 nnoremap <silent> <C-j> :bprev<CR>
 nnoremap <silent> <C-k> :bnext<CR>
@@ -67,20 +66,19 @@ nnoremap <silent> <Esc><Esc> :noh<CR>
 inoremap <silent> <Esc> <Esc>:w<Cr>
 
 
-let g:airline_theme = 'molokai'
-let g:airline_powerline_fonts = 1
+"let g:airline_powerline_fonts = 1
 set laststatus=2
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#wordcount#enabled = 1
-let g:airline#extensions#default#layout = [['a', 'b', 'c'], ['x', 'y', 'z']]
-let g:airline_section_c = '%t'
-let g:airline_section_x = '%{&filetype}'
+"let g:airline#extensions#default#layout = [['a', 'b', 'c'], ['x', 'y', 'z']]
+"let g:airline_section_c = '%t'
+"let g:airline_section_x = '%{&filetype}'
 "let g:airline_section_z = '%3l:%2v %{airline#extensions#ale#get_warning()} %{airline#extensions#ale#get_error()}'
 "let g:airline#extensions#ale#error_symbol = ' '
 "let g:airline#extensions#ale#warning_symbol = ' '
-let g:airline#extensions#default#section_truncate_width = {}
-let g:airline#extensions#whitespace#enabled = 1
+"let g:airline#extensions#default#section_truncate_width = {}
+"let g:airline#extensions#whitespace#enabled = 1
 "let g:airline#extensions#ale#enabled = 1
 "nmap <silent> gd :LspDefinition<CR>
 nmap <silent> <f2> :LspRename<CR>
