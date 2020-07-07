@@ -19,7 +19,7 @@ alias vi=nvim
 alias vim=nvim
 export GOPATH=$HOME/.go/vendor
 export JAVA_HOME="/opt/java/jdk-11.0.2"
-export PATH="$PATH:$HOME/.go/go/bin:$GOPATH/bin:$HOME/gowin/IDE/bin/:/usr/bin:$JAVA_HOME/bin"
+export PATH="$PATH:$HOME/.go/go/bin:$GOPATH/bin:$HOME/gowin/IDE/bin/:/usr/bin:$JAVA_HOME/bin:$HOME/bin:$HOME/.gem/ruby/2.7.0/bin"
 export GO111MODULE=on
 
 function fish_user_key_bindings
@@ -27,3 +27,5 @@ function fish_user_key_bindings
   bind \cx\ck peco_kill
 end
 set -U FZF_LEGACY_KEYBINDINGS 0
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+set LANG en_US.UTF8

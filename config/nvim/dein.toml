@@ -18,6 +18,11 @@ repo = 'Shougo/vimfiler'
 
 [[plugins]]
 repo =  'Shougo/neosnippet.vim'
+hook_add = '''
+    let g:neosnippet#snippets_directory = '$HOME/.config/nvim/snippets'
+    let g:insert = 1
+    let g:filetypes = 'snippet'
+'''
 
 [[plugins]]
 repo =  'Shougo/neosnippet-snippets'
@@ -53,12 +58,10 @@ hook_add = '''
     let g:previm_enable_realtime = 1
 '''
 [[plugins]]
-repo = 'nat-chan/vim-latex-live-preview'
-on_ft = 'tex'
-hook_add = '''
-  let g:livepreview_previewer = 'apvlv'
-"  let g:livepreview_engine = 'luajittex --fmt=luajitlatex.fmt' "コンパイル速度を上げたい場合はこちら
-  let g:livepreview_engine = 'latexmk'
-  set swapfile
-  set updatetime=1000
-'''
+repo = 'thinca/vim-quickrun'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+
+[[plugins]]
+repo = 'nametake/vim-goiferr-snippets'

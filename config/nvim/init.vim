@@ -58,6 +58,16 @@ set autoindent
 
 set display=uhex
 colorscheme molokai
+
+map <MiddleMouse>   <Nop>
+map <2-MiddleMouse> <Nop>
+map <3-MiddleMouse> <Nop>
+map <4-MiddleMouse> <Nop>
+imap <MiddleMouse>   <Nop>
+imap <2-MiddleMouse> <Nop>
+imap <3-MiddleMouse> <Nop>
+imap <4-MiddleMouse> <Nop>
+
 hi MatchParen      ctermfg=208 ctermbg=233 cterm=bold 
 tnoremap <ESC> <C-\><C-n>
 nnoremap <silent> <C-j> :bprev<CR>
@@ -66,7 +76,7 @@ nnoremap <silent> <Esc><Esc> :noh<CR>
 inoremap <silent> <Esc> <Esc>:w<Cr>
 
 
-"let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 set laststatus=2
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -89,17 +99,39 @@ nmap <silent> <Leader>i :LspImplementation<CR>
 let g:lsp_diagnostics_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_text_edit_enabled = 0
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" imap <expr> <TAB>
+"            \ pumvisible() ? "\<C-n>" :
+"            \ neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+imap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+imap <expr><A-l> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<A-l>"
+
+" SuperTab like snippets behavior.
+"imap  <expr><TAB>
+"    \ pumvisible() ? "\<C-n>" :
+"    \ neosnippet#expandable_or_jumpable() ?
+"    \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+ 
+"smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+"    \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+nmap <leader>qf  <Plug>(coc-fix-current)
+inoremap <silent><expr> <c-space> coc#refresh()
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
 nmap <silent> <space><space> :<C-u>CocList<cr><Paste>
 highlight CocErrorSign ctermfg=15 ctermbg=196
 highlight CocWarningSign ctermfg=0 ctermbg=172
@@ -123,3 +155,11 @@ let g:deoplete#enable_at_startup = 1
 "   \: "\<TAB>"
 
 nmap gx <Plug>(openbrowser-smart-search)
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
